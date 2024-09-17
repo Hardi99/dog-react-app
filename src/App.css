@@ -319,6 +319,10 @@ body {
   justify-content: center;
 }
 
+footer p {
+  font-size: 1rem;
+}
+
 @media (max-width: 768px) {
   #mainNav {
     display: none;
