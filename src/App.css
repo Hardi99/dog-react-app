@@ -259,6 +259,7 @@ body {
   justify-content: start;
   padding: 20px;
   text-align: center;
+  gap: 10px;
 }
 
 .breed-input {
@@ -267,6 +268,21 @@ body {
   margin-bottom: 20px;
   border-radius: 5px;
   border: 1px solid var(--black);
+}
+
+.breed-button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: var(--red);
+  color: var(--white);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.breedNav {
+  height: calc(100vh - 80px);
+  overflow-y: auto;
 }
 
 .search-button {
@@ -279,7 +295,7 @@ body {
   cursor: pointer;
 }
 
-.search-button:hover {
+.search-button:hover, .breed-button:hover {
   background-color: var(--black);
 }
 

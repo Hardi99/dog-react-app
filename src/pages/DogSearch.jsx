@@ -10,12 +10,19 @@ const DogSearch = () => {
   const [searchTriggered, setSearchTriggered] = useState(false);  // Déclencheur de la recherche
   const [popupImage, setPopupImage] = useState(null); // Pour gérer l'image du popup
   const [isPopupOpen, setIsPopupOpen] = useState(false); // Gérer l'état d'ouverture du popup
+  const [menuOpen, setMenuOpen] = useState(false);
 
   // URL de l'API Dog CEO pour récupérer la liste des races
   const breedsUrl = "https://dog.ceo/api/breeds/list/all";
 
   // URL de l'API Dog CEO pour rechercher des images par race
   const getBreedImageUrl = (breed) => `https://dog.ceo/api/breed/${breed}/images`;
+
+  const racesList = Object.keys(breeds)
+
+  const toggleMenu = () => {
+      setMenuOpen(!menuOpen);
+  };
 
   // useEffect pour récupérer la liste des races au chargement du composant
   useEffect(() => {
@@ -90,16 +97,31 @@ const DogSearch = () => {
           </div>
         </div>
       )}
+      {/* Popup d'affichage des races */}
+      {menuOpen && (
+        <div id="popup-bg" className="active" onClick={toggleMenu}>
+          <div className="popup-content" onClick={(e) => e.stopPropagation()}>
+            <nav id="popupNav" className="breedNav">
+              <ul>
+                {racesList.map((race, index) => (
+                  <li key={index}><a href="">{race}</a></li>
+                ))}
+              </ul>
+            </nav>
+          </div>
+        </div>
+      )}
         {isLoading ? (
           <p>Chargement...</p>
         ) : (
           <div className="gallery-container">
             <div className="dog-search-container">
+              <button onClick={toggleMenu} className="breed-button">Voir les races</button>          
               <h2>Rechercher des images par race de chien</h2>
               <nav>
                 <input
                   type="text"
-                  placeholder="Entrez la race de chien (ex: beagle)"
+                  placeholder="Entrez la race de chien"
                   value={breed}
                   onChange={(e) => setBreed(e.target.value)}
                   className="breed-input"
