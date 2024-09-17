@@ -57,7 +57,7 @@ body {
   gap: 20px;
 }
 
-#mainNav a {
+#mainNav a, #mainHeader p {
   color: var(--white);
   text-decoration: none;
   font-size: 1.5em;
@@ -80,20 +80,6 @@ body {
 
 #menuToggle.hamburger {
   background-image: url('./assets/hamburger.png');
-}
-
-/* Popup for mobile */
-.popup-bg {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.7);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
 }
 
 .popup-content {
@@ -206,6 +192,11 @@ body {
   width: 100%;
 }
 
+.galleryH1 {
+  font-size: 2.5rem;
+  text-align: center;
+}
+
 /* Les images dans la galerie */
 .gallery-item {
   width: 100%;
@@ -235,7 +226,6 @@ body {
   justify-content: center;
   align-items: center;
   z-index: 1000;
-  display: none;
 }
 
 #popup-bg.active {
@@ -266,8 +256,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  height: 100vh;
+  justify-content: start;
   padding: 20px;
 }
 
@@ -329,6 +318,19 @@ body {
 }
 
 @media screen and (min-width: 1024px){
+
+  #mainHeader {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    align-items: center;
+    background-color: var(--dark-blue);
+    height: 40px;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-sizing: border-box;
+    padding: 10px;
+  }
   
   .dog-image {
     width: 400px;

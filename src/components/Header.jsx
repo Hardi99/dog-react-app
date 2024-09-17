@@ -26,7 +26,7 @@ const Header = () => {
 
     return (
         <header id="mainHeader">
-            <p>DogAPI</p>
+            <p>MyDogSite</p>
             
             {!isMobile && (
                 <nav id="mainNav">
@@ -44,7 +44,7 @@ const Header = () => {
                         &nbsp;
                     </button>
                     {menuOpen && (
-                        <div className="popup-bg" onClick={toggleMenu}>
+                        <div id="popup-bg" onClick={toggleMenu}>
                             <div className="popup-content" onClick={e => e.stopPropagation()}>
                                 <nav id="popupNav">
                                     <ul>
