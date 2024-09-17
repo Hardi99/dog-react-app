@@ -258,6 +258,7 @@ body {
   align-items: center;
   justify-content: start;
   padding: 20px;
+  text-align: center;
 }
 
 .breed-input {
